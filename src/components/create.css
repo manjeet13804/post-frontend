@@ -1,0 +1,27 @@
+.main-create{
+    width: 500px;
+    height: 450px;
+    background: white;
+    margin: 100px auto;
+}
+.input-data{
+    width: 400px;
+    height: 30px;
+    border-radius: 5px;
+    margin: 10px 10%;
+    border: 2px solid blue;
+}
+label{
+    margin: 10px 10%;
+}
+#input-data{
+    height: 100px;
+}
+.btn{
+    width: 400px;
+    height: 30px;
+    border-radius: 5px;
+    margin: 10px 10%;
+    background-color: #ed5684;
+    color: white;
+}

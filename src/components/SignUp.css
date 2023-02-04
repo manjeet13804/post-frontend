@@ -1,0 +1,48 @@
+body{
+    background-color: yellowgreen;
+}
+.main-box{
+    width: 564px;
+    height: 350px;
+    background: #ffffff;
+    border: 1px solid #dee1e6;
+    margin: auto;
+    margin-top: 100px;
+}
+.information img{
+    width: 120px;
+    margin: 40px 40%;
+    border: 2px solid blue;
+    border-radius: 50%;
+}
+.information .login-para{
+margin-left: 20%;
+}
+.information .signup-para{
+margin-left: 40%;
+}
+.input-box{
+    width: 450px;
+    height: 30px;
+    border-radius: 5px;
+    margin: 10px 10%;
+    border: 2px solid blue;
+}
+.btn1{
+    width: 460px;
+    height: 30px;
+    border-radius: 5px;
+    margin: 10px 10%;
+    background-color: #ed5684;
+    color: white;
+}
+.signup-link{
+    padding: auto;
+    text-align: center;
+}
+.checkbox{
+    margin: 10px 0 10px 10%;
+}
+.form-control{
+    width: 450px;
+}

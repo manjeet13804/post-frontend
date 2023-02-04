@@ -1,0 +1,9 @@
+button{
+  /* width: 50px; */
+  display: inline;
+  background-color: blue;
+  color: white;
+}
+body{
+  background-color: blue;
+}

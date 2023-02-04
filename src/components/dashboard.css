@@ -1,0 +1,76 @@
+.headercontainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 20px 20px;
+    background: yellow;
+}
+
+.userid {
+    font-family: "Source Sans Pro";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 25px;
+    color: #27279b;
+}
+
+/* .userid:hover {
+    font-family: "Source Sans Pro";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 17px;
+    line-height: 25px;
+    color: #c51c40;
+} */
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+    font-size: 20px;
+    color: #d85d0b;
+}
+
+.dropdown-content {
+    display: block;
+    box-sizing: border-box;
+    padding-top: 7px;
+    height: 10px;
+    text-align: end;
+    position: sticky;
+    width: 100px;
+    background-color: transparent;
+    z-index: 1;
+}
+
+/* .dropdown:hover .dropdown-content {
+    display: block;
+} */
+
+.headerbtmline {
+    background: #e1f9f4;
+    margin-top: 30px;
+    height: 3px;
+}
+.menu{
+margin-right: 10px;
+color: darkblue;
+}
+.blog{
+    display: inline-flex;
+    width: 400px;
+    flex-direction: column;
+    color: blue;
+    line-height: 30px;
+    justify-content: space-between;
+    margin-left: 50px;
+}
+.description{
+    color: black;
+}
+
+.blog{
+    border: 2px solid green;
+    padding: 5px;
+    margin-bottom: 10px;
+}
