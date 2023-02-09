@@ -22,18 +22,33 @@ const Action = () => {
   const [render, setRender] = useState(false)
   const [open, setOpen] = useState(false)
   const [fetch, setFetch] = useState(false)
+  const [base64String,setBase64String]=useState()
   const likeddata = states.map((each) => each.like.includes(userId))
   useEffect(() => {
     axios.get("http://localhost:5000/api/blog")
       .then(async function (response) {
-        setStates(response.data.reverse());
+    setStates(response.data.reverse());
       })
       .catch(function (error) {
         console.log(error);
       });
     setFetch(false)
   }, [fetch])
+useEffect(()=>{
+  if(userId){
+  axios.get("http://localhost:5000/api/blogs/profile")
+  .then(async function (response) {
+    // const base64Strings = btoa(
+    //   String.fromCharCode(...new Uint8Array(response))
+    // );
+    // setBase64String(base64Strings)
+    console.log(response);
 
+  })
+  .catch(function (error) {
+    console.log(error);
+  });}
+},[userId])
   const handleReadMore = (id,operation) => {
     if (operation) setIsExpanded([...isExpanded,id])
     else{
@@ -97,6 +112,8 @@ const Action = () => {
             </Link>
           </div>
           {userId && <div className="dropdown" onClick={() => setOpen(!open)}>
+         { 
+         <img src={`data:image/jpeg;base64,${base64String}`} width="300"/>}
             <BiUser />
             {userName}
             <CgChevronDown />

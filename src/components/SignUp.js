@@ -15,18 +15,18 @@ function Signup() {
         email: "",
         password: "",
         confirmPassword: "",
+        photo:""
     });
 
     const navigate = useNavigate();
 
     async function onSubmit(data) {
-        const { email, password } = sigupDetails;
-
+        const formData=new FormData()
+        formData.append("photo",sigupDetails.photo,sigupDetails.photo.name)
+        formData.append("email",sigupDetails.email)
+        formData.append("password",sigupDetails.password)
         axios
-            .post("http://localhost:5000/api/user/signup", {
-                email: email,
-                password: password,
-            })
+            .post("http://localhost:5000/api/user/signup", formData)
             .then((res) => {
                 alert("Signup Successfull")
                 navigate("/login")})
@@ -90,7 +90,17 @@ function Signup() {
                 {errors.confirmPassword && (
                     <p className="error">* {errors.confirmPassword.message}</p>
                 )}
+                <label htmlFor="photo">Upload Profile photo</label>
+                    <input className="form-control" type="file" placeholder="photo" name="photo"
+                    {...register("photo")
+                    }
+                    onChange={(e) =>
+                        setSignDetails({ ...sigupDetails, photo: e.target.files[0] })
+                    }
+                     /><br />
+
                     <button type="submit" className="btn btn-primary">Sign up</button>
+                    
             </form>
         </section>
 
