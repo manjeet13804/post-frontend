@@ -22,7 +22,6 @@ const Action = () => {
   const [render, setRender] = useState(false)
   const [open, setOpen] = useState(false)
   const [fetch, setFetch] = useState(false)
-  const [base64String,setBase64String]=useState()
   const likeddata = states.map((each) => each.like.includes(userId))
   useEffect(() => {
     axios.get("https://blogs-posts.onrender.com/api/blog")
@@ -34,21 +33,7 @@ const Action = () => {
       });
     setFetch(false)
   }, [fetch])
-useEffect(()=>{
-  if(userId){
-  axios.get("https://blogs-posts.onrender.com/api/blogs/profile")
-  .then(async function (response) {
-    // const base64Strings = btoa(
-    //   String.fromCharCode(...new Uint8Array(response))
-    // );
-    // setBase64String(base64Strings)
-    console.log(response);
 
-  })
-  .catch(function (error) {
-    console.log(error);
-  });}
-},[userId])
   const handleReadMore = (id,operation) => {
     if (operation) setIsExpanded([...isExpanded,id])
     else{
@@ -112,8 +97,7 @@ useEffect(()=>{
             </Link>
           </div>
           {userId && <div className="dropdown" onClick={() => setOpen(!open)}>
-         { 
-         <img src={`data:image/jpeg;base64,${base64String}`} width="300"/>}
+       
             <BiUser />
             {userName}
             <CgChevronDown />

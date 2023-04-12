@@ -42,7 +42,7 @@ const Login = ({data}) => {
 
     return <div className="main-box">
         <section className="information">
-            <p className="login-para">Enter your credentials to login your account</p>
+            <p className="login-para">Enter your credentials to login</p>
             <form method="POST" >
                 <input className="form-control" type="email" placeholder="User Id" required name="email"
                     onChange={(e) => {
@@ -56,7 +56,7 @@ const Login = ({data}) => {
                 <br />
                 <input type="checkbox" className="checkbox" />
                 <span>  Remember me?</span>
-                <button className="btn btn-primary" onClick={login}>Login</button>
+                <button className="btn-button" onClick={login}>Login</button>
             </form>
             <Link to="/">
                 <div className="forget"></div>

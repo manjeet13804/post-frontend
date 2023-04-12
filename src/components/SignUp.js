@@ -99,7 +99,7 @@ function Signup() {
                     }
                      /><br />
 
-                    <button type="submit" className="btn btn-primary">Sign up</button>
+                    <button type="submit" className="btn-button-1">Sign up</button>
                     
             </form>
         </section>
