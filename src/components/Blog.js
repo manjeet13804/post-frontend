@@ -4,7 +4,7 @@ import { Link, useParams } from 'react-router-dom';
 const Blog = () => {
     const [states, setStates] = useState()
     const { id } = useParams();
-    const url = `http://localhost:5000/api/blog/${id}`
+    const url = `https://blogs-posts.onrender.com/api/blog/${id}`
     useLayoutEffect(() => {
         axios.get(url)
             .then(async function (response) {

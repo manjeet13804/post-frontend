@@ -15,7 +15,7 @@ const Create = () => {
     const addPost = (e) => {
         e.preventDefault();
 
-        axios.post('http://localhost:5000/api/blogs', formData,
+        axios.post('https://blogs-posts.onrender.com/api/blogs', formData,
             {
                 headers: {
                     authorization: localStorage.getItem('token')

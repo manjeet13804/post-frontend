@@ -26,7 +26,7 @@ function Signup() {
         formData.append("email",sigupDetails.email)
         formData.append("password",sigupDetails.password)
         axios
-            .post("http://localhost:5000/api/user/signup", formData)
+            .post("https://blogs-posts.onrender.com/api/user/signup", formData)
             .then((res) => {
                 alert("Signup Successfull")
                 navigate("/login")})

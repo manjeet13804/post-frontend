@@ -15,7 +15,7 @@ const Login = ({data}) => {
             password: password
         }
         localStorage.setItem('userId', DATA.email)
-        axios.post('http://localhost:5000/api/user/login', DATA)
+        axios.post('https://blogs-posts.onrender.com/api/user/login', DATA)
             .then(function (response) {
                 console.log(response.data.message);
                 const res = response.data.message

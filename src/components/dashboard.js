@@ -25,7 +25,7 @@ const Action = () => {
   const [base64String,setBase64String]=useState()
   const likeddata = states.map((each) => each.like.includes(userId))
   useEffect(() => {
-    axios.get("http://localhost:5000/api/blog")
+    axios.get("https://blogs-posts.onrender.com/api/blog")
       .then(async function (response) {
     setStates(response.data.reverse());
       })
@@ -36,7 +36,7 @@ const Action = () => {
   }, [fetch])
 useEffect(()=>{
   if(userId){
-  axios.get("http://localhost:5000/api/blogs/profile")
+  axios.get("https://blogs-posts.onrender.com/api/blogs/profile")
   .then(async function (response) {
     // const base64Strings = btoa(
     //   String.fromCharCode(...new Uint8Array(response))
@@ -58,7 +58,7 @@ useEffect(()=>{
   }
 
   const handleLikes = (id, operation) => {
-    axios.put(`http://localhost:5000/api/blogs/like/${id}/${userId}`, { operation },
+    axios.put(`https://blogs-posts.onrender.com/api/blogs/like/${id}/${userId}`, { operation },
       {
         headers: {
           authorization: localStorage.getItem('token')
@@ -69,7 +69,7 @@ useEffect(()=>{
 
 
   const handelComment = async (val) => {
-    axios.put(`http://localhost:5000/api/blogs/addcomment/${userId}/${comment.blogId}`, comment,
+    axios.put(`https://blogs-posts.onrender.com/api/blogs/addcomment/${userId}/${comment.blogId}`, comment,
       {
         headers: {
           authorization: localStorage.getItem('token')
@@ -85,7 +85,7 @@ useEffect(()=>{
 
   const handelCommentLikes = (commentid, blogid, userid, userName, operation) => {
     const commentLike = { commentid, blogid, userid, userName, operation }
-    axios.put(`http://localhost:5000/api/blogs/likecomment/${blogid}/${commentid}`, commentLike,
+    axios.put(`https://blogs-posts.onrender.com/api/blogs/likecomment/${blogid}/${commentid}`, commentLike,
       {
         headers: {
           authorization: localStorage.getItem('token')
